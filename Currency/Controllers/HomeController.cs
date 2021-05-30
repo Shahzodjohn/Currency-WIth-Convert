@@ -2,10 +2,7 @@
 using Currency.Models;
 using Currency.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -50,8 +47,6 @@ namespace Currency.Controllers
                 (new StringReader(await result.Content.ReadAsStringAsync()));
 
             //Для добавления всех валют в базу донных с сервера NBT
-
-
             //foreach(var item in valCurs.Valute)
             //{
             //    _context.Valutes.Add(new Valute 
@@ -73,15 +68,17 @@ namespace Currency.Controllers
         public IActionResult Converting(float amount, string charcode)
         {
             var res = _context.Valutes.FirstOrDefault(x => x.CharCode == charcode);
-            if (res == null)
+            if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("Конвертация", "Ошибка конвертации, выберите валюту еще раз и введите сумму в текущей валюте!");
                 return View("Converting");
             }
             
             var multiply = amount * float.Parse(res.Value.Replace(".",","));
+            ViewBag.Message = charcode;
             ViewBag.Message = multiply.ToString();
             return View();
+
         }
 
 
