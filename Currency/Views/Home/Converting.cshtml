@@ -1,0 +1,50 @@
+﻿@model Currency.ViewModels.ValCurs
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="text-danger" asp-validation-summary="All">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="margin-top:100px">
+        <form class="form-group" asp-action="Converting" asp-controller="Home" method="post">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Конверт валют</h5>
+                    <div class="form-group">
+                        <label>Валюта</label>
+                        <div class="form-group">
+                            <select class="form-select form-control" name="charcode">
+                                <option selected>Выберите сумму</option>
+                                <option value="USD">Доллар США</option>
+                                <option value="RUB">Российский рубль</option>
+                                <option value="EUR">Евро</option>
+                                <option value="CNY">Юани</option>
+                                <option value="CHF">Швейцарские Франки</option>
+                                <option value="UZS">Узбекские Сумы</option>
+                                <option value="KGS">Киргизские Сумы</option>
+                                <option value="KZT">Казахские Тенге</option>
+                                <option value="BYN">Рубли нави Белорус</option>
+                                <option value="IRR">Иранские Риелы</option>
+                                <option value="AFN">Афганские Афганы</option>
+                                <option value="PKR">Пакистанские Рупии</option>
+                                <option value="TRY">Турецкие Лиры</option>
+                                <option value="TMT">Тюркские Монаты</option>
+                                <option value="GBP">Англиские Фунты</option>
+                                <option value="AUD">Австралийский доллар</option>
+                                <option value="DKK">Кроны Дании</option>
+                            </select>
+                            <label>Выберите сумму в выбранной валюте</label>
+                            <input class="form-control" type="number" name="amount" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Конвертировать</button>
+                    <h3>@ViewBag.Message TJS</h3>
+                    @*<h3>@ViewBag["multiply"]</h3>*@
+                    
+                </div>
+                </div>
+        </form>
+    </div>
+</div>

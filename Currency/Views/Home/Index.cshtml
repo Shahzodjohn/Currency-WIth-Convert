@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="text-danger" asp-validation-summary="All">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"  style="margin-top:100px">
+        <form class="form-group"asp-action="Currency"  method="post">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Выберите валюту</h5>
+                    <div class="form-group">
+                        <label>Валюта</label>
+                        <a href="~/home/Converting" class="btn btn-link" style="margin-bottom:13px">Конверт валют</a>
+                        
+                        <div class="form-group">
+                            <input  class="form-control" name="date" type="date" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Искать</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
