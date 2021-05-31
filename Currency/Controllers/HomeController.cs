@@ -67,16 +67,18 @@ namespace Currency.Controllers
         [HttpPost]
         public IActionResult Converting(float amount, string charcode)
         {
-            var res = _context.Valutes.FirstOrDefault(x => x.CharCode == charcode);
+            var charCode = _context.Valutes.FirstOrDefault(x => x.CharCode == charcode);
+
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("Конвертация", "Ошибка конвертации, выберите валюту еще раз и введите сумму в текущей валюте!");
                 return View("Converting");
             }
             
-            var multiply = amount * float.Parse(res.Value.Replace(".",","));
-            ViewBag.Message = charcode;
-            ViewBag.Message = multiply.ToString();
+            var multiply = amount * float.Parse(charCode.Value.Replace(".",","));
+            ViewBag.Amount = amount;
+            ViewBag.Char = charcode;
+            ViewBag.Mul = multiply.ToString();
             return View();
 
         }

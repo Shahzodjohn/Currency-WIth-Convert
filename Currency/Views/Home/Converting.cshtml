@@ -41,8 +41,24 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Конвертировать</button>
                     
-                    @*<h6 name="charcode">@ViewBag.Message</h6>*@
-                    <h6>@ViewBag.Message TJS</h6>
+                    @*<label> </label>
+                    <label></label>
+                    <label></label>*@
+                    <p><strong> From : @ViewBag.Amount</strong> @ViewBag.Char</p>
+                    
+                    <p><strong>To</strong> @ViewBag.Mul <strong>TJS</strong> </p>
+                    @*<table>
+
+
+                       
+                            @foreach (var item in Model.Valute)
+                            {
+                                <tr>
+                                    <td>@item.CharCode</td>
+                                </tr>
+                            }
+                        
+                    </table>*@
                     @*<h3>@ViewBag["multiply"]</h3>*@
                     
                 </div>
