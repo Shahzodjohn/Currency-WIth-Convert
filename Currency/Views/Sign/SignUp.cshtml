@@ -1,0 +1,28 @@
+﻿@model Currency.ViewModels.SignUpViewModel
+@{
+    ViewData["Title"] = "SignUp";
+}
+<div class="row justify-content-center">
+    <div asp-validation-summary="All"></div>
+    <div class="col-md-6 p-3">
+        <form action="SignUp" method="post">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Регистрация</h5>
+
+                    <label>Контактные номера</label>
+                    <input type="tel" asp-for="PhoneNumber" required class="form-control" />
+                    <label>Email адрес</label>
+                    <input type="email" asp-for="Email" required class="form-control" />
+                    <label>Логин</label>
+                    <input type="text" asp-for="Login" required class="form-control" />
+                    <label>Пароль</label>
+                    <input type="password" asp-for="Password" required class="form-control" />
+                </div>
+                <div class="card-footer">
+                    <input type="submit" class="btn btn-outline-primary btn-block" value="Зарегистрироваться" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

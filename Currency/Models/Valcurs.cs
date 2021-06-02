@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-namespace Currency.ViewModels
+namespace Currency.Models
 {
 
 

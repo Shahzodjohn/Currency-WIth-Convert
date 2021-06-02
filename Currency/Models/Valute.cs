@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Currency.ViewModels
+namespace Currency.Models
 {
 	[XmlRoot(ElementName = "Valute")]
 	public class Valute

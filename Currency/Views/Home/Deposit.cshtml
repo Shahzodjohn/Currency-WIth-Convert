@@ -1,0 +1,57 @@
+﻿<div class="row">
+    <div class="text-danger" asp-validation-summary="All">
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-6" style="margin-top:100px">
+        <form class="form-group" asp-action="Deposit" asp-controller="Home" method="post">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Конверт валют</h5>
+                    <div class="form-group">
+                        <label>Валюта</label>
+                        <div class="form-group">
+                            <select class="form-select form-control" name="charcode">
+                                <option selected>Выберите валюту</option>
+                                <option value="USD">Доллар США</option>
+                                <option value="TJS">Таджикский сомони</option>
+                            </select>
+                            <label>Выберите сумму депозита</label>
+                            <input class="form-control" type="number" name="amount" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Посчитать</button>
+
+                    <p><strong> </strong> </p>
+
+                    <p><strong> </strong>  <strong></strong> </p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"> Валюта </th>
+                                <th > Ваш вклад </th>
+                                <th > Cумма с процентами </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> @ViewBag.CharCode </td>
+                                <td> @ViewBag.Amount </td>
+                                <td>
+                                    @ViewBag.Result
+                                    @if (ViewBag.CharCode == "USD")
+                                    {
+                                        <span>USD</span>
+                                    }
+                                    @if (ViewBag.CharCode == "TJS")
+                                    {
+                                        <span>TJS</span>
+                                    }
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
