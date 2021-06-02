@@ -2,12 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="row">
+<div class="h-100 d-flex justify-content-center align-items-center w-100">
     <div class="text-danger" asp-validation-summary="All">
     </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-5"  style="margin-top:100px">
-        <form class="form-group"asp-action="Currency"  method="post">
+
+    <div class="mt-5">
+        <form class="form-group" asp-action="Currency" method="post">
 
             <div class="card">
                 <div class="card-body">
@@ -15,9 +15,9 @@
                     <div class="form-group">
                         <label>Валюта</label>
                         @*<a href="~/home/Converting" class="btn btn-link " style="margin-bottom:5px">Конверт валют</a>
-                        <a href="~/home/Deposit" class="btn btn-link " style="margin-left:190px; margin-top:-78px">Сделать депозит</a>*@
+                            <a href="~/home/Deposit" class="btn btn-link " style="margin-left:190px; margin-top:-78px">Сделать депозит</a>*@
                         <div class="form-group">
-                            <input  class="form-control" name="date" type="date" />
+                            <input class="form-control" name="date" type="date" />
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Искать</button>

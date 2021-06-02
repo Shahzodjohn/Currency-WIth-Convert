@@ -3,11 +3,11 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="row">
+<div class="h-100 d-flex justify-content-center align-items-center w-100">
     <div class="text-danger" asp-validation-summary="All">
     </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4" style="margin-top:100px">
+
+    <div class="mt-5">
         <form class="form-group" asp-action="Converting" asp-controller="Home" method="post">
             <div class="card">
                 <div class="card-body">
@@ -40,10 +40,10 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Конвертировать</button>
-                    
+
 
                     <p><strong> </strong> </p>
-                    
+
                     <p><strong> </strong>  <strong></strong> </p>
                     <table class="table">
                         <thead>
@@ -57,17 +57,18 @@
                             <tr>
                                 <td><strong>@ViewBag.Char</strong></td>
                                 <td>@ViewBag.Amount</td>
-                                <td>@ViewBag.Mul
-                                @if(ViewBag.Mul != null)
-            {
-                                      <span><strong>TJS</strong></span>
-            }
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-        </form>
-    </div>
+                                <td>
+                                    @ViewBag.Mul
+                                @if (ViewBag.Mul != null)
+                                {
+                                    <span><strong>TJS</strong></span>
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
 </div>

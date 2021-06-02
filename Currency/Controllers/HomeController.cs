@@ -1,6 +1,7 @@
 ﻿using Currency.Context;
 using Currency.Models;
 using Currency.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -26,13 +27,14 @@ namespace Currency.Controllers
             _context = context;
         }
         public IActionResult HomePage() => View();
-
+        [Authorize]
         public IActionResult Index()
         {
             return View();
         }
 
        [HttpPost]
+       [Authorize]
         public async Task<IActionResult> Currency(string date)
         {
             using var client = new HttpClient();
@@ -67,6 +69,7 @@ namespace Currency.Controllers
 
             return View(valCurs);
         }
+        [Authorize]
         [HttpGet]
         public IActionResult Converting() => View();
      
@@ -88,6 +91,7 @@ namespace Currency.Controllers
             return View();
 
         }
+        [Authorize]
         [HttpGet]
         public IActionResult Deposit() => View();
 
